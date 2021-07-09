@@ -24,7 +24,7 @@ class PermissionsDialog(var ctx: Context, var msg: String) : Dialog(ctx) {
         }
 
         settings.setOnClickListener {
-            val i = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:" + BuildConfig.APPLICATION_ID))
+            val i = Intent(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, Uri.parse("package:com.lijojoseph.mediapicker"))
             ctx.startActivity(i)
             dismiss()
         }
