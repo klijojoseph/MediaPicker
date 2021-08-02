@@ -25,6 +25,10 @@ import droidninja.filepicker.FilePickerConst
 import droidninja.filepicker.PickerManager
 import java.io.File
 import java.io.IOException
+import androidx.activity.result.ActivityResultCallback
+
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.activity.result.contract.ActivityResultContracts.RequestPermission
 
 
 class MediaPicker : AppCompatActivity() {
@@ -68,6 +72,19 @@ class MediaPicker : AppCompatActivity() {
             }
         }
 
+    private val cameraPermissionRequest =
+        registerForActivityResult(ActivityResultContracts.RequestMultiplePermissions()) { result ->
+            val granted = result.entries.all {
+                it.value == true
+            }
+
+        if (granted) {
+            startMediaPicker()
+        } else {
+            setResultCancelled()
+        }
+    }
+
     var mediaType = TYPE_IMAGE
     var chooserType = CHOOSER_CAMERA
     private val returnURLs: ArrayList<String> = ArrayList()
@@ -95,12 +112,10 @@ class MediaPicker : AppCompatActivity() {
     }
 
     private fun requestPermission() {
-        ActivityCompat.requestPermissions(
-            this, arrayOf<String>(Manifest.permission.CAMERA,
-                Manifest.permission.READ_EXTERNAL_STORAGE,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE),
-            PERMISSION_REQUEST_CODE
-        )
+        cameraPermissionRequest.launch(
+            arrayOf(Manifest.permission.CAMERA,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE,
+            Manifest.permission.READ_EXTERNAL_STORAGE))
     }
 
     override fun onRequestPermissionsResult(
