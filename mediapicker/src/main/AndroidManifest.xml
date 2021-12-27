@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    package="com.lijojoseph.mediapicker">
+    package="com.medialib.mediapicker">
 
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -17,7 +17,7 @@
 
         <provider
             android:name="androidx.core.content.FileProvider"
-            android:authorities="com.lijojoseph.mediapicker.fileprovider"
+            android:authorities="com.medialib.mediapicker.fileprovider"
             android:exported="false"
             tools:replace="android:authorities"
             android:grantUriPermissions="true">
@@ -26,16 +26,16 @@
                 android:resource="@xml/provider_paths"/>
         </provider>
 
-        <activity android:name="com.lijojoseph.mediapicker.MainActivity">
+        <activity android:name="com.medialib.mediapicker.MainActivity">
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
 <!--                <category android:name="android.intent.category.LAUNCHER" />-->
 <!--            </intent-filter>-->
         </activity>
-            <activity android:name="com.lijojoseph.mediapicker.MediaPicker"/>
+            <activity android:name="com.medialib.mediapicker.MediaPicker"/>
         <activity
-            android:name="com.lijojoseph.mediapicker.TrimmerActivity" />
+            android:name="com.medialib.mediapicker.TrimmerActivity" />
 
         <activity android:name="com.theartofdev.edmodo.cropper.CropImageActivity"
             android:theme="@style/Theme.AppCompat"/>

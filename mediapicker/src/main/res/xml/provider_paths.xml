@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <paths>
-    <external-path name="external_files" path="Android/data/com.lijojoseph.mediapicker/files/Videos"/>
+    <external-path name="external_files" path="Android/data/com.medialib.mediapicker/files/Videos"/>
 </paths>

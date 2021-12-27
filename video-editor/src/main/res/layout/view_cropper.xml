@@ -70,7 +70,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/black">
 
-                <com.lijojoseph.trimmer.view.TimeLineView
+                <com.medialib.trimmer.view.TimeLineView
                     android:id="@+id/timeLineView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

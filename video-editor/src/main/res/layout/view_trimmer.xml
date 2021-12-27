@@ -78,7 +78,7 @@
                 android:paddingTop="@dimen/_5sdp"
                 android:paddingBottom="@dimen/_5sdp">
 
-                <com.lijojoseph.trimmer.view.TimeLineView
+                <com.medialib.trimmer.view.TimeLineView
                     android:id="@+id/timeLineView"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />
@@ -100,7 +100,7 @@
                 android:thumb="@drawable/seek_line"
                 android:visibility="gone" />
 
-            <com.lijojoseph.trimmer.view.RangeSeekBarView
+            <com.medialib.trimmer.view.RangeSeekBarView
                 android:id="@+id/timeLineBar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
